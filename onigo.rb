@@ -1,6 +1,7 @@
 #coding: utf-8
 require 'tweetstream'
 require '../access_token.rb'
+
 TweetStream.configure do |config|
 	config.consumer_key=CONSUMER_KEY
 	config.consumer_secret=CONSUMER_SECRET
