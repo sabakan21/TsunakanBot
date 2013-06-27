@@ -1,5 +1,6 @@
 #coding: utf-8
 require 'tweetstream'
+require 'twitter'
 require '../access_token.rb'
 
 TweetStream.configure do |config|
@@ -16,7 +17,7 @@ Twitter.configure do |config|
 	config.oauth_token=ACCESS_TOKEN
 	config.oauth_token_secret=ACCESS_TOKEN_SECRET
 end
-TweetStream::Client.new.track('#鬼子')do |status|
+TweetStream::Client.new.track('#鬼子','＃鬼子')do |status|
 	puts "#{status.user.name}(@#{status.user.screen_name})"
 	puts "#{status.text}"
 	puts "=============="
