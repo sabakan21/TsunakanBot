@@ -1,13 +1,12 @@
 #coding: utf-8
 require 'tweetstream'
 require 'twitter'
-require './access_token.rb'
+require '../access_token.rb'
 
 open('./gdpy.txt')do|file|
 	$rand=file.readlines.collect{|line|line.strip}
 end
 
-MY_NAME='tsunakan21'
 
 TweetStream.configure do |config|
 	config.consumer_key=CONSUMER_KEY

@@ -1,7 +1,7 @@
 #coding: utf-8
 require 'tweetstream'
 require 'twitter'
-require './access_token.rb'
+require '../access_token.rb'
 
 open('./random.txt')do|file|
 	$rand=file.readlines.collect{|line|line.strip}
