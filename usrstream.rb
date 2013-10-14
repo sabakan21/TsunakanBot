@@ -23,6 +23,8 @@ Twitter.configure do |config|
 	config.oauth_token=ACCESS_TOKEN
 	config.oauth_token_secret=ACCESS_TOKEN_SECRET
 end
+
+#pubricstream thread
 str_client = TweetStream::Client.new
 str_client.userstream do |status|
 	if status.in_reply_to_screen_name==MY_NAME
@@ -30,3 +32,8 @@ str_client.userstream do |status|
 		Twitter.update(tweet,:in_reply_to_status_id => status.id)
 	end
 end
+
+#userstream thread
+#TweetStream::Client.new.track('#kit_festa_i') do |status|
+#	
+#end
