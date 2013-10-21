@@ -35,5 +35,12 @@ end
 
 #userstream thread
 #TweetStream::Client.new.track('#kit_festa_i') do |status|
-#	
+str_client = TweetStream::Client.new
+str_client.userstream do |status|
+	if status.in_reply_to_screen_name==MY_NAME
+		tweet="@#{status.user.screen_name} #{$rand.shuffle.first}"
+		Twitter.update(tweet,:in_reply_to_status_id => status.id)
+	end
+end
+	
 #end
