@@ -26,9 +26,9 @@ end
 usrThre=Thread.new do
 	usr_client = TweetStream::Client.new
 	usr_client.userstream do |status|
-		if status.in_reply_to_screen_name==MY_NAME #同報時に取得漏れを起こす
+		if status.in_reply_to_screen_name==MY_NAME #同報時に取得漏れを起こすよね
 			tweet="@#{status.user.screen_name} #{$rand.shuffle.first}"
-			puts tweet
+			print "\e[33#{status.user.screen_name}\n\e[m" #後で調整。色変える
 		end
 	end
 end
