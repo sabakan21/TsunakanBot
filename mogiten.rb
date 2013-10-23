@@ -36,8 +36,8 @@ end
 pubThre=Thread.new do
 	pub_client = TweetStream::Client.new
 	pub_client.track('#nowplaying') do |status|
-		puts status.user.screen_name+"\s"+status.text
-	#	print "\e[32m#{status.user.screen_name}\e[m" #後で調整。色変える
+		print "\e[32m@#{status.user.screen_name}\e[m" #後で調整。色変える
+		puts "\s"+status.text
 	end
 end
 
